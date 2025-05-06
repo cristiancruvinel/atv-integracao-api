@@ -35,10 +35,44 @@
 			"response": []
 		},
 		{
-			"name": "Criar contato",
+			"name": "Teste de login",
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"matricula\": \"JOAO123\",\r\n  \"senha\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar contato",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMGE1NmFjYS02Mzc3LTQ2ZjQtODBjZi03NzA4MmVjYTk4N2UiLCJpYXQiOjE3NDY1MjU1MjEsImV4cCI6MTc0NjUyOTEyMX0.kZuwAS5Y52BIdsEV5qDOlf8QlukLScwCQ_XQtKMeLJ0",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n  \"email\": \"joao@email.com\",\r\n  \"telefone\": \"62999998888\"\r\n}",
@@ -69,41 +103,13 @@
 			"response": []
 		},
 		{
-			"name": "Teste de login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"matricula\": \"JOAO123\",\r\n  \"senha\": \"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Teste de autenticação",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMGE1NmFjYS02Mzc3LTQ2ZjQtODBjZi03NzA4MmVjYTk4N2UiLCJpYXQiOjE3NDY1MjU1MjEsImV4cCI6MTc0NjUyOTEyMX0.kZuwAS5Y52BIdsEV5qDOlf8QlukLScwCQ_XQtKMeLJ0",
 						"type": "text"
 					}
 				],
@@ -123,47 +129,13 @@
 			"response": []
 		},
 		{
-			"name": "Teste de aut com token",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"joao@email.com\",\r\n  \"telefone\": \"62999998888\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/contatos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"contatos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Listar usuários",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMGE1NmFjYS02Mzc3LTQ2ZjQtODBjZi03NzA4MmVjYTk4N2UiLCJpYXQiOjE3NDY1MjU1MjEsImV4cCI6MTc0NjUyOTEyMX0.kZuwAS5Y52BIdsEV5qDOlf8QlukLScwCQ_XQtKMeLJ0",
 						"type": "text"
 					}
 				],
@@ -188,7 +160,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMGE1NmFjYS02Mzc3LTQ2ZjQtODBjZi03NzA4MmVjYTk4N2UiLCJpYXQiOjE3NDY1MjU1MjEsImV4cCI6MTc0NjUyOTEyMX0.kZuwAS5Y52BIdsEV5qDOlf8QlukLScwCQ_XQtKMeLJ0",
 						"type": "text"
 					}
 				],
