@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "f81ee3ba-678e-45c0-91f3-ab4a119a5256",
+		"name": "ATV - INTEGRACAO - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43094644"
+	},
+	"item": [
+		{
+			"name": "Criar usuário com senha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"João\",\r\n  \"sobrenome\": \"Silva\",\r\n  \"dataNascimento\": \"1990-01-01\",\r\n  \"matricula\": \"JOAO123\",\r\n  \"senha\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"joao@email.com\",\r\n  \"telefone\": \"62999998888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/contatos?Content-Type=application/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste de login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"matricula\": \"JOAO123\",\r\n  \"senha\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste de autenticação",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/usuarios/protegida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios",
+						"protegida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste de aut com token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"joao@email.com\",\r\n  \"telefone\": \"62999998888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/contatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuários",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar contatos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYTI0OThjYS02NDkxLTQ3ZWItOGRmMS0wMGYzMGUzMzU3M2YiLCJpYXQiOjE3NDY0ODU4MTksImV4cCI6MTc0NjQ4OTQxOX0.kaH3acE__J2FvzvAax-eL0w_VVWderRqyQmy075lsgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/contatos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contatos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

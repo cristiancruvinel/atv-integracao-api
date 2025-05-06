@@ -1,0 +1,8 @@
+# Ignore database
+/src/infrastructure/database/*.sqlite
+
+# Ignore node modules
+/node_modules
+
+# Ignore build outputs
+/dist
